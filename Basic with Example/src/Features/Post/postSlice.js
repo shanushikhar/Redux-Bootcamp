@@ -5,10 +5,17 @@ const initialState = [
   { id: 2, title: "Learing react as well", content: "React is fun" },
 ];
 
-export const counterSlice = createSlice({
+export const postSlice = createSlice({
   name: "post",
   initialState,
-  reducers: {},
+  reducers: {
+    postAdded(state, action) {
+      state.push(action.payload);
+    },
+  },
 });
 export const selectAllPosts = (state) => state.posts;
-export default counterSlice.reducer;
+
+export const { postAdded } = postSlice.actions;
+
+export default postSlice.reducer;
