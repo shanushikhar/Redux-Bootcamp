@@ -14,7 +14,7 @@ export const postSlice = createSlice({
         state.push(action.payload);
       },
       prepare(title, content) {
-        // prepare callback to handle extra/added fun of payload and an be used/trigger from any component
+        // prepare callback to handle extra/added fun of payload and can be used/trigger from any component
         return {
           payload: {
             id: nanoid(),
