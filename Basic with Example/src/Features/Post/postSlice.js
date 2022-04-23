@@ -13,13 +13,14 @@ export const postSlice = createSlice({
       reducer(state, action) {
         state.push(action.payload);
       },
-      prepare(title, content) {
+      prepare(title, content, userId) {
         // prepare callback to handle extra/added fun of payload and can be used/trigger from any component
         return {
           payload: {
             id: nanoid(),
             title: title,
             content,
+            userId,
           },
         };
       },
