@@ -6,7 +6,7 @@ const initialState = [
 ];
 
 export const postSlice = createSlice({
-  name: "post",
+  name: "heyman",
   initialState,
   reducers: {
     postAdded: {

@@ -1,10 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postSlice";
+import { getAlldata } from "./users";
 
 const PostsList = () => {
   const posts = useSelector(selectAllPosts);
-  console.log(posts);
+  //console.log(posts);
+  const users = useSelector(getAlldata);
+  // console.log(users);
   const renderPosts = posts.map((post) => (
     <article key={post.id}>
       <h3>{post.title}</h3>
@@ -14,7 +17,7 @@ const PostsList = () => {
 
   return (
     <section>
-      <h2>Posts</h2>
+      <h2>Posts {users.value}</h2>
       {renderPosts}
     </section>
   );
