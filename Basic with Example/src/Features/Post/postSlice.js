@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
   { id: 1, title: "Learing Redux toolkit", content: "I've heard good thing" },
@@ -9,8 +9,20 @@ export const postSlice = createSlice({
   name: "post",
   initialState,
   reducers: {
-    postAdded(state, action) {
-      state.push(action.payload);
+    postAdded: {
+      reducer(state, action) {
+        state.push(action.payload);
+      },
+      prepare(title, content) {
+        // prepare callback to handle extra/added fun of payload and an be used/trigger from any component
+        return {
+          payload: {
+            id: nanoid(),
+            title: title,
+            content,
+          },
+        };
+      },
     },
   },
 });

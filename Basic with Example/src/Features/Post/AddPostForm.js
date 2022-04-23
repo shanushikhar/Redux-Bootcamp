@@ -12,13 +12,7 @@ const AddPostForm = () => {
   const savePostHandler = (e) => {
     // e.preventDefault(); // if type="button" then no need for this
     if (title && content) {
-      dispatch(
-        postAdded({
-          id: nanoid(),
-          title: title,
-          content,
-        })
-      );
+      dispatch(postAdded(title, content));
       setTitle("");
       setContent("");
     }
