@@ -5,6 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   count: 0,
+  value: "Testing for getting value",
 };
 
 export const counterSlice = createSlice({
@@ -31,5 +32,8 @@ export const counterSlice = createSlice({
 // Will handle the action type `'counter/increment'`
 export const { increment, decrement, reset, incrementByAmount } =
   counterSlice.actions;
+
+export const initialData = (state) => state.counter; // it will provide all state value
+export const getTestingVal = (state) => state.counter.value; // it will provide only testing val
 
 export default counterSlice.reducer;
