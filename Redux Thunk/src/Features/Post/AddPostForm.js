@@ -14,6 +14,7 @@ const AddPostForm = () => {
   const savePostHandler = (e) => {
     // e.preventDefault(); // if type="button" then no need for this
     if (title && content) {
+      console.log(title, content);
       dispatch(postAdded(title, content, userId));
       setTitle("");
       setContent("");
